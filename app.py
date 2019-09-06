@@ -6,7 +6,7 @@ import json
 import requests_oauthlib
 
 app = flask.Flask(__name__)
-
+#route
 @app.route('/')
 def index():
     r = random.randint(0,9)
