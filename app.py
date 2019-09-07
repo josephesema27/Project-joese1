@@ -6,7 +6,6 @@ import json
 import requests_oauthlib
 
 app = flask.Flask(__name__)
-#Function
 @app.route('/')
 def index():
     r = random.randint(0,9)
@@ -37,7 +36,6 @@ def index():
     twitter_response_body = twitter_response.json()
     twitter_text = twitter_response_body["statuses"][r]["text"]
     
-    # print(twitter_response.json())
         
     return flask.render_template("index.html", random_num = r, artist = primary_artist, image = song_image, title = song_title, artist_image = primary_artist_image, twitter_json = twitter_response_body, link = artist_link, tweet = twitter_text)
     
@@ -49,6 +47,3 @@ app.run(
     debug = True
     )
     
-
-# print(json.dumps(json_body, indent=2))
-#
